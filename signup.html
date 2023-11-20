@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SignUp</title>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				background-color: beige;
+			}
+			#container {
+				background-color: darkslategray;
+				display: flex;
+				flex-direction: column;
+				width: 60vw;
+				height: 70vh;
+				justify-content: center;
+				align-items: center;
+				gap: 15px;
+			}
+			h1 {
+				color: white;
+			}
+			p {
+				color: white;
+			}
+			.inputs {
+				padding-left: 20px;
+				width: 40vw;
+				height: 6vh;
+				border: none;
+				border-radius: 20px;
+			}
+			#btn {
+				width: 20vw;
+				background-color: beige;
+				height: 7vh;
+				border: none;
+				border-radius: 20px;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<h1>SignUp</h1>
+			<input class="inputs" id="name" type="text" placeholder="Enter name" />
+			<input class="inputs" id="user-name" type="text" placeholder="Enter userName" />
+			<input class="inputs" id="email" type="email" placeholder="Enter email" />
+			<input class="inputs" id="password" type="password" placeholder="Enter password" />
+			<button id="btn">Signup</button>
+			<p>
+				already have account? <a href="login.html"><span style="color: beige">login</span></a>
+			</p>
+		</div>
+
+		<script src="signup.js"></script>
+	</body>
+</html>

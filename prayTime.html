@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pray Time</title>
+		<style>
+			#container {
+				display: flex;
+				flex-direction: column;
+				background-color: antiquewhite;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div>
+				<h1 id="day"></h1>
+				<h3 id="hijry"></h3>
+				<h3 id="date">fd</h3>
+			</div>
+			<div id="allPray">
+				<p id="Fajr"></p>
+				<p id="Dhuhr"></p>
+				<p id="Asr"></p>
+				<p id="Maghrib"></p>
+				<p id="Isha"></p>
+			</div>
+		</div>
+	</body>
+	<script>
+		function getFetch() {
+			fetch('http://api.aladhan.com/v1/calendarByCity/2023/11?city=Kuwait&country=Kuwait&method=2')
+				.then((response) => response.json())
+				.then((data) => {
+					// for (let i = 0; i < data.data[19].timings.length; i++) {
+					// 	console.log('u');
+					// }
+					// let day = document.getElementById('day');
+					// data.map((item) => {
+					// 	console.log(item.data[19].date.hijri.weekday.en);
+					// });
+					let day = document.getElementById('day');
+					day.innerText = data.data[19].date.hijri.weekday.en;
+					let container = document.getElementById('container');
+					let hijryDtae = document.getElementById('hijry');
+					hijryDtae.innerText = data.data[19].date.hijri.date;
+
+					let date = document.getElementById('date');
+					date.innerText = data.data[19].date.readable;
+
+					let Fajr = document.getElementById('Fajr');
+					Fajr.innerHTML = `Fajr: ${data.data[19].timings.Fajr}`;
+					console.log(data.data[19].timings);
+
+					let Dhuhr = document.getElementById('Dhuhr');
+					Asr.innerHTML = `Dhuhr: ${data.data[19].timings.Dhuhr}`;
+
+					// let Asr = document.getElementById('Asr');
+					// Asr.innerHTML = `Asr: ${data.data[19].timings.Asr}`;
+
+					console.log(data.data[19].timings);
+					// console.log(data);
+				});
+		}
+
+		getFetch();
+	</script>
+</html>
