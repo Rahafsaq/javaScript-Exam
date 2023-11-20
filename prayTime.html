@@ -17,7 +17,7 @@
 			<div>
 				<h1 id="day"></h1>
 				<h3 id="hijry"></h3>
-				<h3 id="date">fd</h3>
+				<h3 id="date"></h3>
 			</div>
 			<div id="allPray">
 				<p id="Fajr"></p>
@@ -54,10 +54,16 @@
 					console.log(data.data[19].timings);
 
 					let Dhuhr = document.getElementById('Dhuhr');
-					Asr.innerHTML = `Dhuhr: ${data.data[19].timings.Dhuhr}`;
+					Dhuhr.innerHTML = `Dhuhr: ${data.data[19].timings.Dhuhr}`;
 
-					// let Asr = document.getElementById('Asr');
-					// Asr.innerHTML = `Asr: ${data.data[19].timings.Asr}`;
+					let Asr = document.getElementById('Asr');
+					Asr.innerHTML = `Asr: ${data.data[19].timings.Asr}`;
+
+					let Maghrib = document.getElementById('Maghrib');
+					Maghrib.innerHTML = `Maghrib: ${data.data[19].timings.Maghrib}`;
+
+					let Isha = document.getElementById('Isha');
+					Isha.innerHTML = `Isha: ${data.data[19].timings.Isha}`;
 
 					console.log(data.data[19].timings);
 					// console.log(data);
